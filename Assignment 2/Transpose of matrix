@@ -1,0 +1,11 @@
+C
+#include <stdio.h>
+void transpose(int mat[100][100], int m, int n, int res[100][100]) {
+    for (int i=0; i<m; i++)
+        for (int j=0; j<n; j++)
+            res[j][i] = mat[i][j];
+}
+
+Python
+def transpose(matrix):
+    return [list(row) for row in zip(*matrix)]
