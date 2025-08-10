@@ -1,3 +1,4 @@
+C
 include <stdio.h>
 int main() {
     int n, arr[100], first, second;
@@ -18,3 +19,14 @@ int main() {
     printf("Second largest element: %d\n", second);
     return 0;
 }
+
+Python
+
+arr = list(map(int, input().split()))
+first = second = float('-inf')
+for num in arr:
+    if num > first:
+        second, first = first, num
+    elif num > second and num != first:
+        second = num
+print(second)
