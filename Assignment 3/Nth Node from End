@@ -1,0 +1,22 @@
+C
+int getNthFromEnd(struct Node* head, int n) {
+    struct Node* fast = head, * slow = head;
+    for (int i = 0; i < n; i++) {
+        if (!fast) return -1;
+        fast = fast->next;
+    }
+    while (fast) { slow = slow->next; fast = fast->next; }
+    return slow ? slow->data : -1;
+}
+
+
+Python 
+def get_nth_from_end(head, n):
+    fast = slow = head
+    for _ in range(n):
+        if not fast: return -1
+        fast = fast.next
+    while fast:
+        slow = slow.next
+        fast = fast.next
+    return slow.data if slow else -1
