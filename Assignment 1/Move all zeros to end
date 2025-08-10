@@ -1,3 +1,4 @@
+C
 include <stdio.h>
 int main() {
     int n, arr[100], j = 0;
@@ -17,3 +18,9 @@ int main() {
         printf("%d ", arr[i]);
     return 0;
 }
+
+Python
+
+arr = list(map(int, input().split()))
+arr = [x for x in arr if x != 0] + [0] * arr.count(0)
+print(arr)
