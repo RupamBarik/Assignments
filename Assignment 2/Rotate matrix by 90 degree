@@ -1,0 +1,28 @@
+C
+#include <stdio.h>
+#define N 3
+void rotate90(int mat[N][N]) {
+    for (int i=0; i<N; i++) {
+        for (int j=i; j<N; j++) {
+            int temp = mat[i][j];
+            mat[i][j] = mat[j][i];
+            mat[j][i] = temp;
+        }
+    }
+    for (int i=0; i<N; i++) {
+        for (int j=0; j<N/2; j++) {
+            int temp = mat[i][j];
+            mat[i][j] = mat[i][N-1-j];
+            mat[i][N-1-j] = temp;
+        }
+    }
+}
+
+Python
+def rotate_90(matrix):
+    n = len(matrix)
+    for i in range(n):
+        for j in range(i, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    for i in range(n):
+        matrix[i].reverse()
