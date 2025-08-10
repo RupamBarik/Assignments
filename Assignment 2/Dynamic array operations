@@ -1,0 +1,13 @@
+C
+#include <stdio.h>
+#include <stdlib.h>
+void append(int **arr, int *size, int val) {
+    *arr = realloc(*arr, (*size + 1) * sizeof(int));
+    (*arr)[(*size)++] = val;
+}
+
+Python 
+
+arr = []
+def append(val):
+    arr.append(val)
