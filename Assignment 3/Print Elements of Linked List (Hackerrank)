@@ -1,0 +1,14 @@
+C
+void printList(struct Node* head) {
+    while (head) {
+        printf("%d\n", head->data);
+        head = head->next;
+    }
+}
+
+
+Python 
+def print_list(head):
+    while head:
+        print(head.data)
+        head = head.next
