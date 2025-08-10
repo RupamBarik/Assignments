@@ -1,0 +1,23 @@
+C
+struct Node {
+    int data;
+    struct Node* next;
+};
+struct Node* insertAtHead(struct Node* head, int x) {
+    struct Node* temp = malloc(sizeof(struct Node));
+    temp->data = x;
+    temp->next = head;
+    return temp;
+}
+
+
+Python 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def insert_at_head(head, x):
+    new_node = Node(x)
+    new_node.next = head
+    return new_node
