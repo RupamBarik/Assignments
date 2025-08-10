@@ -1,0 +1,35 @@
+C
+struct Node* addTwoLists(struct Node* first, struct Node* second) {
+    struct Node* res = NULL, *last = NULL;
+    int carry = 0, sum;
+    while(first || second || carry) {
+        sum = carry + (first ? first->data : 0) + (second ? second->data : 0);
+        carry = sum/10;
+        struct Node* temp = malloc(sizeof(struct Node));
+        temp->data = sum%10; temp->next = NULL;
+        if(!res) res = temp;
+        else last->next = temp;
+        last = temp;
+        if(first) first = first->next;
+        if(second) second = second->next;
+    }
+    return res;
+}
+
+
+Python 
+def add_two_lists(l1, l2):
+    carry = 0
+    head = tail = None
+    while l1 or l2 or carry:
+        v = carry + (l1.data if l1 else 0) + (l2.data if l2 else 0)
+        carry = v // 10
+        node = Node(v % 10)
+        if not head:
+            head = tail = node
+        else:
+            tail.next = node
+            tail = node
+        l1 = l1.next if l1 else None
+        l2 = l2.next if l2 else None
+    return head
