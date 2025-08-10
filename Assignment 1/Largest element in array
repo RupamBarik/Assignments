@@ -1,3 +1,4 @@
+C
 #include <stdio.h>
 int main() {
     int n, arr[100], largest;
@@ -13,3 +14,9 @@ int main() {
     printf("Largest element: %d\n", largest);
     return 0;
 }
+
+Python
+
+arr = list(map(int, input().split()))
+print(max(arr))
+
