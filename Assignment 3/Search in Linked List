@@ -1,0 +1,17 @@
+C
+int search(struct Node* head, int key) {
+    while (head) {
+        if (head->data == key) return 1;
+        head = head->next;
+    }
+    return 0;
+}
+
+
+Python 
+def search(head, key):
+    while head:
+        if head.data == key:
+            return True
+        head = head.next
+    return False
