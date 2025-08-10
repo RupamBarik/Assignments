@@ -1,0 +1,10 @@
+C
+#include <stdio.h>
+void addPoly(int A[], int B[], int res[], int n) {
+    for (int i = 0; i < n; i++)
+        res[i] = A[i] + B[i];
+}
+
+Python 
+def add_polynomials(A, B):
+    return [a + b for a, b in zip(A, B)]
