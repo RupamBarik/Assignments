@@ -1,0 +1,21 @@
+C
+void insertMiddle(struct Node* head, int x, int pos) {
+    struct Node* temp = malloc(sizeof(struct Node));
+    temp->data = x;
+    struct Node* curr = head;
+    for (int i = 1; i < pos-1 && curr; i++)
+        curr = curr->next;
+    temp->next = curr->next;
+    curr->next = temp;
+}
+
+
+Python 
+def insert_middle(head, x, pos):
+    new_node = Node(x)
+    curr = head
+    for _ in range(pos-2):
+        if curr.next:
+            curr = curr.next
+    new_node.next = curr.next
+    curr.next = new_node
