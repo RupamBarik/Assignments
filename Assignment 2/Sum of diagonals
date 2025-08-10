@@ -1,0 +1,21 @@
+C
+#include <stdio.h>
+int diagonalSum(int mat[100][100], int n) {
+    int sum = 0;
+    for (int i=0; i<n; i++) {
+        sum += mat[i][i];
+        if (i != n-1-i)
+            sum += mat[i][n-1-i];
+    }
+    return sum;
+}
+
+Python 
+def diagonal_sum(matrix):
+    n = len(matrix)
+    total = 0
+    for i in range(n):
+        total += matrix[i][i]
+        if i != n-1-i:
+            total += matrix[i][n-1-i]
+    return total
