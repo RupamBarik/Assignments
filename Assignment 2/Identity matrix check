@@ -1,0 +1,19 @@
+C
+#include <stdio.h>
+int isIdentity(int mat[100][100], int n) {
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if ((i == j && mat[i][j] != 1) || (i != j && mat[i][j] != 0))
+                return 0;
+    return 1;
+}
+
+
+Python 
+def is_identity(matrix):
+    n = len(matrix)
+    for i in range(n):
+        for j in range(n):
+            if (i == j and matrix[i][j] != 1) or (i != j and matrix[i][j] != 0):
+                return False
+    return True
